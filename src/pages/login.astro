@@ -1,0 +1,38 @@
+---
+import LoginPage from "../components/Login";
+import "../styles/global.css";
+---
+
+<html lang="en" class="dark">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Misfit | Futuristic Semi-RP</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <style is:global>
+            :root {
+                --background: #030303;
+                --foreground: #ffffff;
+            }
+            body {
+                background-color: var(--background);
+                color: var(--foreground);
+                font-family: "Inter", sans-serif;
+                -webkit-font-smoothing: antialiased;
+            }
+        </style>
+    </head>
+    <body>
+        <div
+            id="background-layer"
+            class="fixed inset-0 w-full h-full z-[-1] bg-[#030303]"
+        >
+        </div>
+
+        <LoginPage client:load />
+    </body>
+</html>

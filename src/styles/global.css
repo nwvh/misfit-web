@@ -1,0 +1,35 @@
+/* src/styles/global.css */
+@import "tailwindcss";
+
+/* ── Custom theme values (v4 uses @theme block) ── */
+@theme {
+    --color-bg: #09090b;
+    --color-surface: #111115;
+    --color-text: #f2ede3;
+    --color-muted: rgba(242, 237, 227, 0.45);
+    --color-faint: rgba(242, 237, 227, 0.22);
+    --color-accent: #c9a96e;
+    --color-green: #22c55e;
+    --color-border: rgba(255, 255, 255, 0.07);
+    --color-borderHover: rgba(255, 255, 255, 0.14);
+
+    --font-manrope: "Manrope", sans-serif;
+    --font-cormorant: "Cormorant Garamond", serif;
+}
+
+/* ── Your existing custom styles ── */
+:root {
+    --background: #030303;
+    --foreground: #ffffff;
+}
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.doc-grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+}
