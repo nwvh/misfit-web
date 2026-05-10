@@ -37,7 +37,7 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="relative z-[1] py-20 pb-[100px] px-7 max-w-[1160px] mx-auto"
+      className="relative z-[1] py-20 pb-[100px] px-4 md:px-7 max-w-[1160px] mx-auto"
     >
       {/* Section header */}
       <FadeUp className="mb-14">
@@ -45,16 +45,16 @@ export default function Features() {
           Proč Misfit
         </p>
 
-        <div className="flex items-end justify-between gap-10 flex-wrap">
-          <h2 className="font-['Manrope',sans-serif] font-extrabold text-[clamp(34px,5vw,56px)] tracking-[-0.045em] text-[#f2ede3] leading-[1.05] m-0">
+        <div className="flex flex-col md:flex-row items-end justify-between gap-6">
+          <h2 className="font-['Manrope',sans-serif] font-extrabold text-[clamp(28px,4vw,46px)] md:text-[clamp(34px,5vw,56px)] tracking-[-0.045em] text-[#f2ede3] leading-[1.05] m-0">
             V čem se lišíme od 99%
             <br />
-            <span className="font-['Cormorant_Garamond',serif] italic font-light text-[clamp(36px,5.4vw,62px)] text-[rgba(242,237,227,0.38)] tracking-[-0.025em]">
+            <span className="font-['Cormorant_Garamond',serif] italic font-light text-[clamp(30px,4.5vw,54px)] md:text-[clamp(36px,5.4vw,62px)] text-[rgba(242,237,227,0.38)] tracking-[-0.025em]">
               československých serverů.
             </span>
           </h2>
 
-          <p className="font-['Manrope',sans-serif] font-normal text-[15px] leading-[1.7] tracking-[-0.01em] text-[rgba(242,237,227,0.45)] max-w-[360px] m-0 pb-[6px]">
+          <p className="font-['Manrope',sans-serif] font-normal text-[14px] md:text-[15px] leading-[1.65] md:leading-[1.7] tracking-[-0.01em] text-[rgba(242,237,227,0.45)] max-w-[360px] m-0 pb-[6px]">
             CZ/SK scéna je v posledních letech postavena na cash-grab systému
             kde se servery skládají z uniklých záloh jiných serverů,
             ukradených skriptů a týmu nezkušených lidí. Tohle u nás
@@ -64,7 +64,7 @@ export default function Features() {
       </FadeUp>
 
       {/* Cards grid */}
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-[14px]">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-[14px]">
         {cards.map((c, i) => (
           <FeatureCard key={c.title} {...c} index={i} />
         ))}

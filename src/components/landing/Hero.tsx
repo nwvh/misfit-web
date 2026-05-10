@@ -30,18 +30,26 @@ export default function Hero() {
       </div>
 
       {/* Two-column grid */}
-      <div className="grid grid-cols-[1fr_auto] gap-[clamp(40px,6vw,88px)] items-center w-full max-w-[50vw]">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-[clamp(40px,6vw,88px)] items-center w-full max-w-[50vw] mx-auto px-4 lg:px-0 -mt-4 md:-mt-0">
         {/* LEFT: editorial copy */}
-        <div className="flex flex-col gap-0">
+        <div className="relative flex flex-col gap-0 order-2 lg:order-1">
+          {/* Mobile character - adjusted positioning */}
+          <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 -z-20 pointer-events-none lg:hidden opacity-50">
+            <img src="/character.png" alt="" className="w-[200px] max-w-[80vw]" />
+          </div>
+          {/* Desktopcharacter - original positioning */}
+          <div className="absolute left-[-15vw] top-1/2 -translate-y-1/2 pointer-events-none -z-20 hidden lg:block">
+            <img src="/character.png" alt="" className="w-[300px] max-w-none" />
+          </div>
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, ease: EASE }}
-            className="inline-flex items-center gap-[9px] bg-white/[0.045] border border-white/[0.07] rounded-full px-[14px] py-[5px] pl-[9px] mb-9 self-start"
+            className="inline-flex items-center gap-[9px] bg-white/[0.045] border border-white/[0.07] rounded-full px-[14px] py-[5px] pl-[9px] mb-7 md:mb-9 self-start"
           >
             <div className="w-[7px] h-[7px] rounded-full bg-[#22c55e] shadow-[0_0_8px_#22c55e]" />
-            <span className="font-['Manrope',sans-serif] font-medium text-[12px] tracking-[0.02em] text-[rgba(242,237,227,0.45)]">
+            <span className="font-['Manrope',sans-serif] font-medium text-[12px] md:text-[12px] tracking-[0.02em] text-[rgba(242,237,227,0.45)]">
               Criminal Update nyní na serveru
             </span>
           </motion.div>
@@ -51,12 +59,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, delay: 0.1, ease: EASE }}
-            className="mb-7"
+            className="mb-6 md:mb-7 z-30"
           >
-            <h1 className="font-['Manrope',sans-serif] font-extrabold text-[clamp(48px,6.5vw,82px)] leading-none tracking-[-0.048em] text-[#f2ede3] m-0">
+            <h1 className="font-['Manrope',sans-serif] font-extrabold text-[clamp(36px,5vw,64px)] md:text-[clamp(48px,6.5vw,82px)] leading-none tracking-[-0.048em] text-[#f2ede3] m-0">
               Misfits
             </h1>
-            <h2 className="font-['Cormorant_Garamond',serif] italic font-light text-[clamp(46px,6.8vw,88px)] leading-[1.05] tracking-[-0.02em] text-[#c9a96e] m-0">
+            <h2 className="font-['Cormorant_Garamond',serif] italic font-light text-[clamp(38px,5.2vw,68px)] md:text-[clamp(46px,6.8vw,88px)] leading-[1.05] tracking-[-0.02em] text-[#c9a96e] m-0">
               budoucnost roleplaye
             </h2>
           </motion.div>
@@ -66,7 +74,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.22, ease: EASE }}
-            className="font-['Manrope',sans-serif] font-normal text-[16px] leading-[1.72] tracking-[-0.012em] text-[rgba(242,237,227,0.45)] max-w-[440px] mb-12 mt-0"
+            className="font-['Manrope',sans-serif] font-normal text-[14px] md:text-[16px] leading-[1.65] md:leading-[1.72] tracking-[-0.012em] text-[rgba(242,237,227,0.45)] max-w-[440px] mb-8 md:mb-12 mt-0"
           >
             Semi-RP server zasazený v blízké budoucnosti. Důkladně jsme
             promysleli každé rozhodnutí, abychom zaručili zážitek, který jste v
@@ -74,8 +82,10 @@ export default function Hero() {
           </motion.p>
         </div>
 
-        {/* RIGHT: server card */}
-        <ServerCard current={47} max={128} />
+        {/* RIGHT: server card - full width on mobile */}
+        <div className="order-1 lg:order-2 w-full">
+          <ServerCard current={47} max={128} />
+        </div>
       </div>
 
       {/* Scroll indicator */}
@@ -83,12 +93,12 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.4 }}
-        className="absolute bottom-8"
+        className="absolute bottom-6 md:bottom-8"
       >
         <motion.div
           animate={{ y: [0, 7, 0] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-px h-10 bg-gradient-to-b from-[rgba(242,237,227,0.22)] to-transparent mx-auto"
+          className="w-px h-8 md:h-10 bg-gradient-to-b from-[rgba(242,237,227,0.22)] to-transparent mx-auto"
         />
       </motion.div>
 

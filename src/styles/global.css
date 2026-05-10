@@ -17,6 +17,36 @@
     --font-cormorant: "Cormorant Garamond", serif;
 }
 
+/* ── Mobile responsive breakpoints ── */
+@reference "tailwindcss/theme";
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Better mobile viewport handling */
+    @media (max-width: 768px) {
+        .mobile-hidden {
+            display: none !important;
+        }
+        /* Fix for mobile viewport units */
+        .vh-mobile-fix {
+            height: 100dvh;
+        }
+    }
+    
+    @media (min-width: 769px) {
+        .desktop-only {
+            display: none !important;
+        }
+    }
+}
+
 /* ── Your existing custom styles ── */
 :root {
     --background: #030303;

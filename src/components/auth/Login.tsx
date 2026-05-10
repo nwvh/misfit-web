@@ -92,7 +92,7 @@ export default function Login() {
             className="w-full"
           >
             <a
-              href="/dashboard"
+              href="/"
               className="group w-full flex items-center justify-center gap-3 bg-[#5865F2] hover:bg-[#4752c4] text-white font-['Manrope',sans-serif] font-bold text-[14.5px] tracking-[-0.015em] px-7 py-[14px] rounded-2xl transition-[background,transform] duration-200 hover:scale-[0.98] no-underline relative overflow-hidden"
             >
               {/* Shimmer */}
