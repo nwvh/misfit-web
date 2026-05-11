@@ -41,7 +41,7 @@ export default function Captcha() {
       }
 
       const res = await ky
-        .post("http://localhost:30120/verify/verifyToken", {
+        .post(`${process.env.FIVEM_SERVER_URL}/verify/verifyToken`, {
           json: {
             browserFingerprint: JSON.stringify(fingerprint),
             token,
