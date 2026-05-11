@@ -41,7 +41,7 @@ export default function Captcha() {
       }
 
       const res = await ky
-        .post(`${process.env.FIVEM_SERVER_URL}/verify/verifyToken`, {
+        .post(`${import.meta.env.PUBLIC_FIVEM_SERVER_URL}/verify/verifyToken`, {
           json: {
             browserFingerprint: JSON.stringify(fingerprint),
             token,
